@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Buzz Campaign Proposal - Iterate.ai</title>
+    <style>
+        :root {
+            /* Primitive Color Tokens */
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-300: rgba(50, 184, 198, 1);
+            --color-teal-400: rgba(45, 166, 178, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            --color-teal-800: rgba(41, 150, 161, 1);
+            --color-red-400: rgba(255, 84, 89, 1);
+            --color-red-500: rgba(192, 21, 47, 1);
+            --color-orange-400: rgba(230, 129, 97, 1);
+            --color-orange-500: rgba(168, 75, 47, 1);
+
+            /* RGB versions for opacity control */
+            --color-brown-600-rgb: 94, 82, 64;
+            --color-teal-500-rgb: 33, 128, 141;
+            --color-slate-900-rgb: 19, 52, 59;
+            --color-slate-500-rgb: 98, 108, 113;
+            --color-red-500-rgb: 192, 21, 47;
+            --color-red-400-rgb: 255, 84, 89;
+            --color-orange-500-rgb: 168, 75, 47;
+            --color-orange-400-rgb: 230, 129, 97;
+            --color-surface-rgb: 255, 255, 253;
+
+            /* Background color tokens (Light Mode) */
+            --color-bg-1: rgba(59, 130, 246, 0.08);
+            --color-bg-2: rgba(245, 158, 11, 0.08);
+            --color-bg-3: rgba(34, 197, 94, 0.08);
+            --color-bg-4: rgba(239, 68, 68, 0.08);
+            --color-bg-5: rgba(147, 51, 234, 0.08);
+            --color-bg-6: rgba(249, 115, 22, 0.08);
+            --color-bg-7: rgba(236, 72, 153, 0.08);
+            --color-bg-8: rgba(6, 182, 212, 0.08);
+
+            /* Royal Blue Color System - Complete Migration */
+            --color-royal-blue-400: #60A5FA;
+            --color-royal-blue-500: #3B82F6;
+            --color-royal-blue-600: #2563EB;
+            --color-royal-blue-700: #1D4ED8;
+            --color-royal-blue-800: #1E40AF;
+            --color-royal-blue-900: #1E3A8A;
+
+            /* RGB versions for royal blue */
+            --color-royal-blue-400-rgb: 96, 165, 250;
+            --color-royal-blue-500-rgb: 59, 130, 246;
+            --color-royal-blue-600-rgb: 37, 99, 235;
+            --color-royal-blue-800-rgb: 30, 64, 175;
+
+            /* Semantic Color Tokens (Light Mode) */
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-royal-blue-500);
+            --color-primary-hover: var(--color-royal-blue-600);
+            --color-primary-active: var(--color-royal-blue-700);
+            --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+            --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-btn-primary-text: var(--color-cream-50);
+            --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-error: var(--color-red-500);
+            --color-success: var(--color-royal-blue-500);
+            --color-warning: var(--color-orange-500);
+            --color-info: var(--color-slate-500);
+            --color-focus-ring: rgba(var(--color-royal-blue-500-rgb), 0.4);
+            --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+            /* Common style patterns */
+            --focus-ring: 0 0 0 3px var(--color-focus-ring);
+            --focus-outline: 2px solid var(--color-primary);
+            --status-bg-opacity: 0.15;
+            --status-border-opacity: 0.25;
+            --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+            /* Typography - Industry Standard Sizes */
+            --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            --font-size-xs: 12px;
+            --font-size-sm: 14px;
+            --font-size-base: 16px;
+            --font-size-md: 16px;
+            --font-size-lg: 18px;
+            --font-size-xl: 20px;
+            --font-size-2xl: 24px;
+            --font-size-3xl: 24px;
+            --font-size-4xl: 32px;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 550;
+            --font-weight-bold: 600;
+            --line-height-tight: 1.2;
+            --line-height-normal: 1.5;
+            --letter-spacing-tight: -0.01em;
+
+            /* Spacing */
+            --space-0: 0;
+            --space-1: 1px;
+            --space-2: 2px;
+            --space-4: 4px;
+            --space-6: 6px;
+            --space-8: 8px;
+            --space-10: 10px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-48: 48px;
+            --space-64: 64px;
+
+            /* Additional mobile-specific variables */
+            --header-height-mobile: 50px;
+            --header-height-desktop: 140px;
+            --touch-target: 44px;
+            --space-14: 14px;
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-base: 8px;
+            --radius-md: 10px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+
+            /* Animation */
+            --duration-fast: 150ms;
+            --duration-normal: 250ms;
+            --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+            /* Layout */
+            --container-sm: 640px;
+            --container-md: 768px;
+            --container-lg: 1024px;
+            --container-xl: 1280px;
+        }
+
+        /* Base styles */
+        html {
+            font-size: var(--font-size-base); /* Updated to use base size (16px) */
+            font-family: var(--font-family-base);
+            line-height: var(--line-height-normal);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Mobile-first approach - smaller header */
+        }
+
+        /* Header behavior - non-sticky on mobile as per requirements */
+        @media (min-width: 768px) {
+            body {
+                padding-top: 160px; /* Larger sticky header on desktop */
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .sticky-header {
+                position: relative; /* Non-sticky on mobile */
+                transform: none !important;
+            }
+            
+            body {
+                padding-top: 0; /* No top padding needed for non-sticky header */
+            }
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            font-weight: var(--font-weight-semibold);
+            line-height: var(--line-height-tight);
+            color: var(--color-text);
+            letter-spacing: var(--letter-spacing-tight);
+        }
+
+        h1 { font-size: var(--font-size-4xl); } /* 32px */
+        h2 { font-size: var(--font-size-3xl); } /* 24px */
+        h3 { font-size: var(--font-size-xl); } /* 20px */
+        h4 { font-size: var(--font-size-lg); } /* 18px */
+        h5 { font-size: var(--font-size-base); } /* 16px */
+        h6 { font-size: var(--font-size-sm); } /* 14px */
+
+        p {
+            margin: 0 0 var(--space-16) 0;
+        }
+
+        /* Mobile-first Smart Header */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(var(--color-surface-rgb, 255, 255, 253), 0.95);
+            border-bottom: 1px solid var(--color-border);
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(12px);
+            transition: transform var(--duration-normal) var(--ease-standard), 
+                       height var(--duration-normal) var(--ease-standard);
+            height: 50px; /* Mobile-first: compact header */
+            overflow: hidden;
+        }
+
+        /* Header hide/show behavior */
+        .sticky-header.hidden {
+            transform: translateY(-100%);
+        }
+
+        .sticky-header.visible {
+            transform: translateY(0);
+        }
+
+        /* Desktop header */
+        @media (min-width: 768px) {
+            .sticky-header {
+                height: auto;
+                min-height: 140px;
+            }
+        }
+
+        .header-content {
+            max-width: var(--container-xl);
+            margin: 0 auto;
+            padding: var(--space-8) var(--space-16); /* Mobile-first: compact padding */
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            height: 100%;
+            justify-content: center;
+        }
+
+        /* Desktop header content */
+        @media (min-width: 768px) {
+            .header-content {
+                padding: var(--space-24);
+                gap: var(--space-16);
+                justify-content: flex-start;
+            }
+        }
+
+        .header-top {
+            display: none; /* Hide on mobile for compact header */
+        }
+
+        /* Mobile compact header - show only essential info */
+        .header-mobile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-8);
+            width: 100%;
+        }
+
+        .header-mobile-title {
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text);
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .header-mobile-metric {
+            font-size: var(--font-size-xs);
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
+            white-space: nowrap;
+        }
+
+        /* Desktop header */
+        @media (min-width: 768px) {
+            .header-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: var(--space-20);
+            }
+
+            .header-mobile {
+                display: none;
+            }
+        }
+
+        .header-title {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text);
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .header-clear-button {
+            background: var(--color-secondary);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+            padding: var(--space-6) var(--space-12); /* Mobile-first: compact button */
+            border-radius: var(--radius-base);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: all var(--duration-normal) var(--ease-standard);
+            min-height: 44px; /* Maintain touch target */
+            min-width: 44px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Desktop clear button */
+        @media (min-width: 768px) {
+            .header-clear-button {
+                padding: var(--space-10) var(--space-20);
+                font-size: var(--font-size-sm);
+            }
+        }
+
+        .header-clear-button:hover {
+            background: var(--color-secondary-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-clear-button:active {
+            background: var(--color-secondary-active);
+            transform: translateY(0);
+        }
+
+        .metrics-dashboard {
+            display: none; /* Hide on mobile for compact header */
+        }
+
+        /* Desktop metrics dashboard */
+        @media (min-width: 768px) {
+            .metrics-dashboard {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: var(--space-16);
+            }
+        }
+
+        .metric-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-20);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--duration-fast) var(--ease-standard);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .metric-label {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-8);
+            font-weight: var(--font-weight-medium);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .metric-value {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            line-height: 1.2;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: var(--container-xl);
+            margin: 0 auto;
+            padding: var(--space-48) var(--space-24);
+            padding-top: var(--space-64); /* Extra space to prevent header overlay */
+        }
+
+        .section {
+            margin-bottom: var(--space-64);
+        }
+
+        .section-title {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text);
+            margin-bottom: var(--space-32);
+            text-align: center;
+            padding-top: var(--space-24); /* Ensure visibility below sticky header */
+            margin-top: var(--space-24);
+        }
+
+        /* First section needs more top padding to avoid header overlap */
+        .section:first-child .section-title {
+            padding-top: var(--space-48);
+            margin-top: var(--space-48);
+        }
+
+
+
+        /* Package Cards */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-24);
+            margin-bottom: var(--space-48);
+        }
+
+        .package-card {
+            background: var(--color-surface);
+            border: 2px solid var(--color-card-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-24);
+            position: relative;
+            min-height: 450px;
+            transition: all var(--duration-normal) var(--ease-standard);
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        .package-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .package-card.selected {
+            border-color: var(--color-primary);
+            background: rgba(var(--color-royal-blue-500-rgb), 0.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .package-radio {
+            position: absolute;
+            top: var(--space-16);
+            right: var(--space-16);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            z-index: 10;
+            margin: var(--space-12);
+            min-width: var(--touch-target);
+            min-height: var(--touch-target);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: var(--space-16);
+            left: var(--space-16);
+            background: var(--color-primary);
+            color: var(--color-btn-primary-text);
+            padding: var(--space-6) var(--space-12);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-bold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            z-index: 5;
+            max-width: calc(100% - 80px); /* Ensure it doesn't overlap with checkbox */
+        }
+
+        .package-header {
+            margin-top: var(--space-48); /* More space to avoid badge/checkbox overlap */
+            margin-bottom: var(--space-24);
+            padding-right: var(--space-32); /* Ensure text doesn't overlap checkbox */
+        }
+
+        .package-name {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text);
+            margin-bottom: var(--space-8);
+        }
+
+        .package-price {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .package-duration {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-24);
+        }
+
+        .package-deliverables {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .package-deliverables li {
+            padding: var(--space-8) 0;
+            border-bottom: 1px solid var(--color-card-border-inner);
+            font-size: var(--font-size-md);
+            line-height: var(--line-height-normal);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .package-deliverables li:last-child {
+            border-bottom: none;
+        }
+
+        .package-deliverables li::before {
+            content: "✓";
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
+            margin-right: var(--space-12);
+            flex-shrink: 0;
+        }
+
+        /* Add-ons Section */
+        .addons-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            table-layout: fixed;
+        }
+
+        .addons-table th,
+        .addons-table td {
+            padding: var(--space-16);
+            text-align: left;
+            border-bottom: 1px solid var(--color-card-border-inner);
+            min-height: 60px;
+            vertical-align: middle;
+        }
+
+        /* Ensure proper touch targets for form controls */
+        .addons-table td:first-child {
+            text-align: center;
+            padding: var(--space-8);
+        }
+
+        .addons-table th {
+            background: var(--color-secondary);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text);
+            font-size: var(--font-size-base);
+        }
+
+        .addons-table td {
+            font-size: var(--font-size-base);
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .addons-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .addons-table tr:hover {
+            background: rgba(var(--color-royal-blue-500-rgb), 0.03);
+        }
+
+        .addon-checkbox {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            /* Enhanced touch targets */
+            margin: var(--space-12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: var(--touch-target);
+            min-height: var(--touch-target);
+            padding: var(--space-14);
+        }
+
+        .addon-price {
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+        }
+
+        .addon-type {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        /* Implementation Timeline & Terms Section */
+        .timeline-terms-section {
+            background: var(--color-bg-3);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+            margin: var(--space-48) 0;
+        }
+
+        .timeline-terms-title {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text);
+            margin-bottom: var(--space-16);
+        }
+
+        .timeline-terms-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-24);
+        }
+
+        @media (min-width: 768px) {
+            .timeline-terms-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .timeline-section, .terms-section {
+            margin: 0;
+        }
+
+        .timeline-section h4, .terms-section h4 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text);
+            margin-bottom: var(--space-12);
+        }
+
+        .timeline-section ul, .terms-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-section li, .terms-section li {
+            padding: var(--space-6) 0;
+            font-size: var(--font-size-md);
+            color: var(--color-text);
+            line-height: var(--line-height-normal);
+        }
+
+        .timeline-section li::before {
+            content: "⏰";
+            margin-right: var(--space-8);
+        }
+
+        .terms-section li::before {
+            content: "✓";
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
+            margin-right: var(--space-8);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: var(--space-48) var(--space-32);
+            background: var(--color-bg-1);
+            border-radius: var(--radius-xl);
+            margin: var(--space-48) auto;
+            overflow: visible;
+            position: relative;
+        }
+
+        /* Mobile CTA Metrics Card - Only visible on mobile when header not sticky */
+        .cta-metrics-mobile {
+            display: none; /* Hidden by default */
+            background: linear-gradient(135deg, rgba(var(--color-royal-blue-500-rgb), 0.1) 0%, rgba(var(--color-royal-blue-500-rgb), 0.05) 100%);
+            border: 1px solid rgba(var(--color-royal-blue-500-rgb), 0.2);
+            border-radius: var(--radius-xl);
+            padding: var(--space-24);
+            margin: var(--space-32) auto;
+            max-width: 100%;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Show on mobile only */
+        @media (max-width: 767px) {
+            .cta-metrics-mobile {
+                display: block;
+            }
+        }
+
+        .cta-metrics-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text);
+            margin-bottom: var(--space-20);
+            text-align: center;
+        }
+
+        .cta-metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            margin-bottom: var(--space-16);
+        }
+
+        .cta-metric-item {
+            text-align: center;
+            padding: var(--space-12);
+            background: rgba(var(--color-surface-rgb, 255, 255, 253), 0.8);
+            border-radius: var(--radius-base);
+            border: 1px solid rgba(var(--color-teal-500-rgb), 0.1);
+        }
+
+        .cta-metric-label {
+            font-size: var(--font-size-xs);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-4);
+            font-weight: var(--font-weight-medium);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .cta-metric-value {
+            font-size: var(--font-size-md);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            line-height: 1.2;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-16);
+            align-items: center;
+            justify-content: center;
+            margin-top: var(--space-32);
+        }
+
+        @media (min-width: 768px) {
+            .cta-buttons {
+                flex-direction: row;
+                gap: var(--space-24);
+            }
+        }
+
+        .cta-title {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text);
+            margin-bottom: var(--space-16);
+        }
+
+        .cta-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-32);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-16) var(--space-32);
+            background: var(--color-primary);
+            color: var(--color-btn-primary-text);
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            transition: all var(--duration-normal) var(--ease-standard);
+            box-shadow: var(--shadow-md);
+            min-height: 48px;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            max-width: 280px;
+        }
+
+        .cta-button.secondary {
+            background: var(--color-secondary);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--color-secondary-hover);
+            color: var(--color-text);
+        }
+
+        .cta-button:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: var(--color-btn-primary-text);
+        }
+
+        .cta-button:active {
+            background: var(--color-primary-active);
+            transform: translateY(0);
+        }
+
+        /* Validation States */
+        .addon-checkbox:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .addons-table tr.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .addons-table tr.disabled td {
+            color: var(--color-text-secondary);
+        }
+
+        .cta-button.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+            background: var(--color-secondary) !important;
+            color: var(--color-text-secondary) !important;
+            border-color: var(--color-border) !important;
+        }
+
+        .cta-button.disabled:hover {
+            transform: none !important;
+            box-shadow: var(--shadow-sm) !important;
+        }
+
+        .validation-message {
+            background: var(--color-bg-4);
+            border: 1px solid var(--color-error);
+            border-radius: var(--radius-base);
+            padding: var(--space-12) var(--space-16);
+            margin: var(--space-16) 0;
+            font-size: var(--font-size-sm);
+            color: var(--color-error);
+            text-align: center;
+            display: none;
+        }
+
+        .validation-message.show {
+            display: block;
+            animation: fadeIn var(--duration-normal) var(--ease-standard);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .package-selection-required {
+            background: linear-gradient(135deg, rgba(var(--color-royal-blue-500-rgb), 0.05) 0%, rgba(var(--color-royal-blue-500-rgb), 0.02) 100%);
+            border: 2px dashed var(--color-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+            margin: var(--space-16) 0;
+            text-align: center;
+        }
+
+        .package-selection-required h4 {
+            color: var(--color-primary);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-8);
+        }
+
+        .package-selection-required p {
+            color: var(--color-text-secondary);
+            margin: 0;
+            font-size: var(--font-size-base);
+        }
+
+        /* Additional Overlap Prevention */
+        .sticky-header {
+            overflow: visible;
+        }
+
+        .packages-grid {
+            overflow: visible;
+        }
+
+        .package-card {
+            overflow: visible;
+        }
+
+        .addons-table {
+            overflow-x: auto;
+        }
+
+        .main-content {
+            overflow: visible;
+        }
+
+        /* Ensure proper touch targets and interactions */
+        .package-radio {
+            pointer-events: auto;
+            min-width: var(--touch-target);
+            min-height: var(--touch-target);
+            padding: var(--space-12);
+        }
+
+        .addon-checkbox {
+            pointer-events: auto;
+            min-width: var(--touch-target);
+            min-height: var(--touch-target);
+            padding: var(--space-12);
+        }
+
+        /* Improve touch interaction on mobile */
+        @media (max-width: 767px) {
+            .package-card {
+                cursor: pointer;
+                -webkit-tap-highlight-color: rgba(var(--color-royal-blue-500-rgb), 0.1);
+            }
+
+            .header-clear-button {
+                -webkit-tap-highlight-color: rgba(var(--color-royal-blue-500-rgb), 0.1);
+            }
+            
+            .mobile-addon-card {
+                cursor: pointer;
+                -webkit-tap-highlight-color: rgba(var(--color-royal-blue-500-rgb), 0.1);
+                /* Enhanced mobile interaction */
+                touch-action: manipulation;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+            
+            .mobile-addon-card:active {
+                transform: scale(0.98);
+                transition: transform 0.1s ease;
+            }
+
+            /* Keep standard sizes on mobile but ensure proper touch targets */
+            .addon-checkbox {
+                padding: var(--space-14); /* Larger touch area without scaling */
+            }
+
+            .package-radio {
+                padding: var(--space-14); /* Larger touch area without scaling */
+            }
+            
+            .mobile-addon-checkbox {
+                padding: var(--space-14); /* Larger touch area without scaling */
+                touch-action: manipulation;
+            }
+            
+            /* Ensure all mobile cards are clearly visible */
+            .mobile-addons-cards {
+                border: 1px solid transparent; /* Force layout */
+                min-height: 1px; /* Ensure container has height */
+            }
+        }
+
+        /* Enhanced package selection visual feedback */
+        .packages-grid::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--color-primary);
+            border-radius: var(--radius-full);
+            opacity: 0;
+            transition: all var(--duration-normal) var(--ease-standard);
+        }
+        
+        .packages-grid.has-selection::before {
+            opacity: 1;
+        }
+        
+        /* Smooth transitions for validation states */
+        .addon-checkbox,
+        .addons-table tr,
+        .cta-button {
+            transition: all var(--duration-normal) var(--ease-standard);
+        }
+        
+        /* Better hover states for disabled elements */
+        .addons-table tr.disabled:hover {
+            background: transparent !important;
+        }
+        
+        .cta-button.disabled:hover {
+            transform: none !important;
+            box-shadow: var(--shadow-sm) !important;
+        }
+        
+        /* Mobile-First Responsive Table - Consistent 768px Breakpoint */
+        @media (max-width: 767px) {
+            /* Hide the table structure and show as cards on all mobile devices */
+            .addons-table {
+                display: none !important;
+            }
+
+            /* Show mobile card layout instead */
+            .mobile-addons-cards {
+                display: flex !important;
+                flex-direction: column;
+            }
+        }
+
+        /* Mobile addon cards - hidden by default */
+        .mobile-addons-cards {
+            display: none;
+            flex-direction: column;
+            gap: var(--space-20);
+            margin-top: var(--space-32);
+            width: 100%;
+            overflow: visible;
+        }
+
+        .mobile-addon-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-20);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--duration-normal) var(--ease-standard);
+            /* Ensure visibility on mobile */
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(var(--color-royal-blue-500-rgb), 0.1);
+        }
+
+        .mobile-addon-card.disabled {
+            opacity: 0.6; /* Clear disabled state */
+            pointer-events: none;
+            background: var(--color-bg-2);
+            cursor: not-allowed;
+        }
+
+        .mobile-addon-card:hover:not(.disabled) {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .mobile-addon-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: var(--space-12);
+            gap: var(--space-16);
+            width: 100%;
+        }
+
+        .mobile-addon-info {
+            flex: 1;
+            min-width: 0; /* Prevent text overflow issues */
+        }
+
+        .mobile-addon-name {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text);
+            margin-bottom: var(--space-6);
+            line-height: var(--line-height-tight);
+            /* Ensure text is always visible */
+            position: relative;
+            z-index: 2;
+            word-wrap: break-word;
+        }
+
+        .mobile-addon-price {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .mobile-addon-type {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        .mobile-addon-checkbox {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: var(--space-4);
+            /* Enhanced touch target */
+            padding: var(--space-14);
+            margin: var(--space-4);
+            min-width: var(--touch-target);
+            min-height: var(--touch-target);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .mobile-addon-description {
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+            line-height: var(--line-height-normal);
+            margin: 0;
+            /* Ensure text is always visible */
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            word-wrap: break-word;
+        }
+
+        /* Desktop table - show above 768px (consistent with header breakpoint) */
+        @media (min-width: 768px) {
+            .mobile-addons-cards {
+                display: none !important;
+            }
+            
+            .addons-table {
+                display: table !important;
+                width: 100%;
+            }
+        }
+        
+        /* Mobile add-ons section title enhancement - Updated breakpoint */
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: var(--font-size-2xl);
+                margin-bottom: var(--space-24);
+            }
+            
+            /* Ensure mobile cards are visible and properly spaced */
+            .mobile-addons-cards {
+                margin-top: var(--space-24);
+                padding: 0;
+                overflow: visible;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-addon-card {
+                margin-bottom: var(--space-16);
+                overflow: visible;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            /* Hide validation message when cards are shown */
+            .package-selection-required {
+                display: block;
+            }
+        }
+
+        /* Tablet responsive - No longer needed as tablets now use mobile cards */
+        /* Tablets (768px and below) now use mobile card layout for better touch interaction */
+
+        /* Mobile Responsiveness - Tablet and below */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: var(--space-32) var(--space-16);
+            }
+            
+            /* Ensure add-ons section has proper spacing */
+            .section {
+                margin-bottom: var(--space-48);
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-20);
+            }
+
+            .package-card {
+                min-height: 420px;
+                padding: var(--space-20);
+            }
+
+            .package-header {
+                margin-top: var(--space-32);
+                padding-right: var(--space-32);
+            }
+
+            .popular-badge {
+                max-width: calc(100% - 70px);
+                font-size: var(--font-size-xs);
+                padding: var(--space-4) var(--space-10);
+            }
+
+            .cta-buttons {
+                gap: var(--space-12);
+            }
+
+            .timeline-terms-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-20);
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 0; /* Non-sticky header on mobile */
+            }
+
+            .metrics-dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .header-title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .package-card {
+                min-height: 350px;
+                padding: var(--space-16);
+            }
+
+            .package-header {
+                margin-top: var(--space-24);
+                padding-right: var(--space-20);
+            }
+
+            .popular-badge {
+                max-width: calc(100% - 50px);
+                font-size: 9px;
+                padding: var(--space-2) var(--space-6);
+            }
+
+            .package-radio {
+                top: var(--space-12);
+                right: var(--space-12);
+                width: 16px;
+                height: 16px;
+            }
+
+            .addons-table {
+                font-size: var(--font-size-xs);
+            }
+
+            .cta-section {
+                padding: var(--space-32) var(--space-16);
+            }
+        }
+
+        @font-face {
+            font-family: 'FKGroteskNeue';
+            src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
+        }
+    </style>
+</head>
+<body>
+    <!-- Smart Mobile-First Header -->
+    <header class="sticky-header visible" id="main-header">
+        <div class="header-content">
+            <!-- Mobile Compact Header -->
+            <div class="header-mobile">
+                <div class="header-mobile-title">Developer Buzz - Iterate.ai</div>
+                <div class="header-mobile-metric" id="mobile-total">Select Package</div>
+                <button class="header-clear-button" onclick="clearAllSelections()" title="Reset All Selections">Reset ✕</button>
+            </div>
+            
+            <!-- Desktop Full Header -->
+            <div class="header-top">
+                <div>
+                    <h1 class="header-title">Developer Buzz Campaign Proposal</h1>
+                    <p style="margin: 0; color: var(--color-text-secondary); font-size: var(--font-size-lg);">Top-of-Funnel Strategy for Iterate.ai</p>
+                </div>
+                <button class="header-clear-button" onclick="clearAllSelections()">Reset All Selections</button>
+            </div>
+            <div class="metrics-dashboard">
+                <div class="metric-card">
+                    <div class="metric-label">Expected Total Investment</div>
+                    <div class="metric-value" id="total-investment">$0/month</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Expected Impressions</div>
+                    <div class="metric-value" id="total-impressions">0</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Expected Community Coverage</div>
+                    <div class="metric-value" id="total-community">0 developers</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Expected Engagement</div>
+                    <div class="metric-value" id="total-engagement">0 interactions</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Packages Section -->
+        <section class="section">
+            <h2 class="section-title">Choose Your Campaign Package</h2>
+            <div class="packages-grid">
+                <!-- Essential Package -->
+                <div class="package-card" data-package="essential" onclick="selectPackage('essential')">
+                    <input type="radio" name="package" class="package-radio" id="essential-radio" value="essential" onchange="handlePackageChange('essential')">
+                    <div class="package-header">
+                        <div class="package-name">Essential</div>
+                        <div class="package-price">$2,999/month</div>
+                        <div class="package-duration">3 months minimum</div>
+                    </div>
+                    <ul class="package-deliverables">
+                        <li>Product Hunt launch coordination</li>
+                        <li>5 targeted subreddit engagements</li>
+                        <li>Hacker News + Dev.to presence</li>
+                        <li>Quora developer Q&amp;A participation</li>
+                        <li>10 technical articles per month</li>
+                        <li>Monthly analytics reports</li>
+                    </ul>
+                </div>
+
+                <!-- Growth Package -->
+                <div class="package-card" data-package="growth" onclick="selectPackage('growth')">
+                    <div class="popular-badge">Most Popular</div>
+                    <input type="radio" name="package" class="package-radio" id="growth-radio" value="growth" onchange="handlePackageChange('growth')">
+                    <div class="package-header">
+                        <div class="package-name">Growth</div>
+                        <div class="package-price">$4,999/month</div>
+                        <div class="package-duration">3 months minimum</div>
+                    </div>
+                    <ul class="package-deliverables">
+                        <li>Premium Product Hunt launch with hunter network</li>
+                        <li>15+ subreddit AMAs and discussions</li>
+                        <li>HN + Dev.to + Stack Overflow + GitHub engagement</li>
+                        <li>Quora + DevRant + Lobsters participation</li>
+                        <li>AI platform listings on 100+ directories</li>
+                        <li>Examples: ProductHunt, AI Tools Directory, BetaList</li>
+                        <li>20 articles + case studies per month</li>
+                        <li>Bi-weekly insights and dashboards</li>
+                    </ul>
+                </div>
+
+                <!-- Enterprise Package -->
+                <div class="package-card" data-package="enterprise" onclick="selectPackage('enterprise')">
+                    <input type="radio" name="package" class="package-radio" id="enterprise-radio" value="enterprise" onchange="handlePackageChange('enterprise')">
+                    <div class="package-header">
+                        <div class="package-name">Enterprise</div>
+                        <div class="package-price">$8,999/month</div>
+                        <div class="package-duration">3 months minimum</div>
+                    </div>
+                    <ul class="package-deliverables">
+                        <li>VIP Product Hunt launch with premium support</li>
+                        <li>Full community management across 25+ platforms</li>
+                        <li>Custom Discord/Slack channel setup</li>
+                        <li>AI platform listings on 100+ directories</li>
+                        <li>All Growth package features included</li>
+                        <li>Indie Hackers + specialized forums</li>
+                        <li>30 in-depth technical assets per month</li>
+                        <li>Weekly executive dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add-ons Section -->
+        <section class="section">
+            <h2 class="section-title">Optional Add-ons</h2>
+            <div class="package-selection-required" id="addon-validation-message">
+                <h4>📦 Package Selection Required</h4>
+                <p>Please select a campaign package above to access optional add-ons</p>
+            </div>
+            <!-- Desktop Table View -->
+            <table class="addons-table">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">Select</th>
+                        <th>Add-on Service</th>
+                        <th>Description</th>
+                        <th style="width: 120px;">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="disabled">
+                        <td data-label="Select">
+                            <input type="checkbox" class="addon-checkbox" id="seo-checkbox" onchange="handleAddonChange('seo')" disabled>
+                        </td>
+                        <td data-label="Add-on Service"><strong>SEO Optimization Package</strong></td>
+                        <td data-label="Description">Technical SEO for developer-focused keywords</td>
+                        <td data-label="Price">
+                            <div class="addon-price">$1,500</div>
+                            <div class="addon-type">monthly</div>
+                        </td>
+                    </tr>
+                    <tr class="disabled">
+                        <td data-label="Select">
+                            <input type="checkbox" class="addon-checkbox" id="events-checkbox" onchange="handleAddonChange('events')" disabled>
+                        </td>
+                        <td data-label="Add-on Service"><strong>Industry Event Matchmaking</strong></td>
+                        <td data-label="Description">Connect with event organizers, secure speaking slots</td>
+                        <td data-label="Price">
+                            <div class="addon-price">$1,200</div>
+                            <div class="addon-type">monthly</div>
+                        </td>
+                    </tr>
+                    <tr class="disabled">
+                        <td data-label="Select">
+                            <input type="checkbox" class="addon-checkbox" id="linkedin-checkbox" onchange="handleAddonChange('linkedin')" disabled>
+                        </td>
+                        <td data-label="Add-on Service"><strong>Executive LinkedIn Profile Management</strong></td>
+                        <td data-label="Description">Professional profile optimization for Magnus</td>
+                        <td data-label="Price">
+                            <div class="addon-price">$800</div>
+                            <div class="addon-type">monthly</div>
+                        </td>
+                    </tr>
+                    <tr class="disabled">
+                        <td data-label="Select">
+                            <input type="checkbox" class="addon-checkbox" id="social-checkbox" onchange="handleAddonChange('social')" disabled>
+                        </td>
+                        <td data-label="Add-on Service"><strong>Company Social Media Management</strong></td>
+                        <td data-label="Description">LinkedIn, Twitter &amp; Reddit presence management</td>
+                        <td data-label="Price">
+                            <div class="addon-price">$1,500</div>
+                            <div class="addon-type">monthly</div>
+                        </td>
+                    </tr>
+                    <tr class="disabled">
+                        <td data-label="Select">
+                            <input type="checkbox" class="addon-checkbox" id="influencer-checkbox" onchange="handleAddonChange('influencer')" disabled>
+                        </td>
+                        <td data-label="Add-on Service"><strong>Developer Influencer Network</strong></td>
+                        <td data-label="Description">Access to 25+ vetted developer advocates</td>
+                        <td data-label="Price">
+                            <div class="addon-price">$3,500</div>
+                            <div class="addon-type">monthly</div>
+                        </td>
+                    </tr>
+                    <tr class="disabled">
+                        <td data-label="Select">
+                            <input type="checkbox" class="addon-checkbox" id="hackathon-checkbox" onchange="handleAddonChange('hackathon')" disabled>
+                        </td>
+                        <td data-label="Add-on Service"><strong>Hackathon Sponsorship Strategy</strong></td>
+                        <td data-label="Description">Strategic hackathon partnerships</td>
+                        <td data-label="Price">
+                            <div class="addon-price">$3,000</div>
+                            <div class="addon-type">quarterly</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Mobile Cards View -->
+            <div class="mobile-addons-cards">
+                <div class="mobile-addon-card disabled" id="mobile-seo-card" onclick="toggleMobileAddon('seo')">
+                    <div class="mobile-addon-header">
+                        <div class="mobile-addon-info">
+                            <div class="mobile-addon-name">SEO Optimization Package</div>
+                            <div class="mobile-addon-price">$1,500</div>
+                            <div class="mobile-addon-type">monthly</div>
+                        </div>
+                        <input type="checkbox" class="mobile-addon-checkbox" id="mobile-seo-checkbox" onchange="handleMobileAddonChange('seo')" disabled>
+                    </div>
+                    <p class="mobile-addon-description">Technical SEO for developer-focused keywords</p>
+                </div>
+
+                <div class="mobile-addon-card disabled" id="mobile-events-card" onclick="toggleMobileAddon('events')">
+                    <div class="mobile-addon-header">
+                        <div class="mobile-addon-info">
+                            <div class="mobile-addon-name">Industry Event Matchmaking</div>
+                            <div class="mobile-addon-price">$1,200</div>
+                            <div class="mobile-addon-type">monthly</div>
+                        </div>
+                        <input type="checkbox" class="mobile-addon-checkbox" id="mobile-events-checkbox" onchange="handleMobileAddonChange('events')" disabled>
+                    </div>
+                    <p class="mobile-addon-description">Connect with event organizers, secure speaking slots</p>
+                </div>
+
+                <div class="mobile-addon-card disabled" id="mobile-linkedin-card" onclick="toggleMobileAddon('linkedin')">
+                    <div class="mobile-addon-header">
+                        <div class="mobile-addon-info">
+                            <div class="mobile-addon-name">Executive LinkedIn Profile Management</div>
+                            <div class="mobile-addon-price">$800</div>
+                            <div class="mobile-addon-type">monthly</div>
+                        </div>
+                        <input type="checkbox" class="mobile-addon-checkbox" id="mobile-linkedin-checkbox" onchange="handleMobileAddonChange('linkedin')" disabled>
+                    </div>
+                    <p class="mobile-addon-description">Professional profile optimization for Magnus</p>
+                </div>
+
+                <div class="mobile-addon-card disabled" id="mobile-social-card" onclick="toggleMobileAddon('social')">
+                    <div class="mobile-addon-header">
+                        <div class="mobile-addon-info">
+                            <div class="mobile-addon-name">Company Social Media Management</div>
+                            <div class="mobile-addon-price">$1,500</div>
+                            <div class="mobile-addon-type">monthly</div>
+                        </div>
+                        <input type="checkbox" class="mobile-addon-checkbox" id="mobile-social-checkbox" onchange="handleMobileAddonChange('social')" disabled>
+                    </div>
+                    <p class="mobile-addon-description">LinkedIn, Twitter &amp; Reddit presence management</p>
+                </div>
+
+                <div class="mobile-addon-card disabled" id="mobile-influencer-card" onclick="toggleMobileAddon('influencer')">
+                    <div class="mobile-addon-header">
+                        <div class="mobile-addon-info">
+                            <div class="mobile-addon-name">Developer Influencer Network</div>
+                            <div class="mobile-addon-price">$3,500</div>
+                            <div class="mobile-addon-type">monthly</div>
+                        </div>
+                        <input type="checkbox" class="mobile-addon-checkbox" id="mobile-influencer-checkbox" onchange="handleMobileAddonChange('influencer')" disabled>
+                    </div>
+                    <p class="mobile-addon-description">Access to 25+ vetted developer advocates</p>
+                </div>
+
+                <div class="mobile-addon-card disabled" id="mobile-hackathon-card" onclick="toggleMobileAddon('hackathon')">
+                    <div class="mobile-addon-header">
+                        <div class="mobile-addon-info">
+                            <div class="mobile-addon-name">Hackathon Sponsorship Strategy</div>
+                            <div class="mobile-addon-price">$3,000</div>
+                            <div class="mobile-addon-type">quarterly</div>
+                        </div>
+                        <input type="checkbox" class="mobile-addon-checkbox" id="mobile-hackathon-checkbox" onchange="handleMobileAddonChange('hackathon')" disabled>
+                    </div>
+                    <p class="mobile-addon-description">Strategic hackathon partnerships</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Timeline & Terms Section -->
+        <section class="timeline-terms-section">
+            <h3 class="timeline-terms-title">Implementation Timeline &amp; Terms</h3>
+            <div class="timeline-terms-content">
+                <div class="timeline-section">
+                    <h4>Implementation Timeline</h4>
+                    <ul>
+                        <li>Campaign launch within 7-10 business days of contract signing</li>
+                        <li>Weekly execution milestones with bi-weekly performance reviews</li>
+                        <li>Full onboarding and strategy alignment in first week</li>
+                    </ul>
+                </div>
+                <div class="terms-section">
+                    <h4>Key Assumptions &amp; Risk Mitigation</h4>
+                    <ul>
+                        <li>Iterate.ai expert availability for AMAs, webinars, and Q&amp;As as needed</li>
+                        <li>Timelines may vary due to holidays or unforeseen circumstances</li>
+                        <li>Performance metrics based on industry standards and historical data</li>
+                        <li>All activities subject to platform terms of service and community guidelines</li>
+                        <li>Comprehensive strategy with diversified platform approach ensures minimal risk to Neotic AI's reputation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2 class="cta-title">Ready to Launch Your Developer Buzz Campaign?</h2>
+            
+            <!-- Mobile Campaign Summary Card -->
+            <div class="cta-metrics-mobile" id="cta-metrics-card">
+                <h3 class="cta-metrics-title">Your Campaign Summary</h3>
+                <div class="cta-metrics-grid">
+                    <div class="cta-metric-item">
+                        <div class="cta-metric-label">Total Investment</div>
+                        <div class="cta-metric-value" id="cta-mobile-investment">$0/mo</div>
+                    </div>
+                    <div class="cta-metric-item">
+                        <div class="cta-metric-label">Impressions</div>
+                        <div class="cta-metric-value" id="cta-mobile-impressions">0</div>
+                    </div>
+                    <div class="cta-metric-item">
+                        <div class="cta-metric-label">Community Coverage</div>
+                        <div class="cta-metric-value" id="cta-mobile-community">0 devs</div>
+                    </div>
+                    <div class="cta-metric-item">
+                        <div class="cta-metric-label">Engagement</div>
+                        <div class="cta-metric-value" id="cta-mobile-engagement">0</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="cta-subtitle">Expected Total Investment: <span id="cta-investment" style="color: var(--color-primary); font-weight: var(--font-weight-bold);">Select a package</span></p>
+            <p class="cta-subtitle">Expected Reach: <span id="cta-reach" style="color: var(--color-primary); font-weight: var(--font-weight-bold);">Select a package</span></p>
+            <div class="validation-message" id="cta-validation-message">
+                <strong>⚠️ Package Selection Required:</strong> Please select a campaign package to access download and booking options.
+            </div>
+            <div class="cta-buttons">
+                <button id="download-btn" class="cta-button secondary disabled" onclick="handleCTAClick('download')">
+                    Download Detailed Proposal
+                </button>
+                <button id="schedule-btn" class="cta-button disabled" onclick="handleCTAClick('schedule')">
+                    Schedule Kickoff Call
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: var(--color-surface); border-top: 1px solid var(--color-border); padding: var(--space-32) var(--space-16); text-align: center; margin-top: var(--space-64);">
+        <div style="max-width: var(--container-lg); margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-16);">
+            <p style="margin: 0; font-size: var(--font-size-md); color: var(--color-text); font-weight: var(--font-weight-medium);">Proposal and pricing valid until October 31, 2025</p>
+            <p style="margin: 0; font-size: var(--font-size-md); color: var(--color-text);">Questions? Contact <a href="mailto:phil@neoticai.com" style="color: var(--color-primary); font-weight: var(--font-weight-medium);">phil@neoticai.com</a></p>
+            <p style="margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary);">© 2025 Neotic AI. All rights reserved. | Enterprise-grade marketing and <strong>app development solutions</strong> for innovative and ambitious companies.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Package and addon data
+        const packages = {
+            essential: {
+                name: "Essential",
+                price: 2999,
+                metrics: {
+                    impressions: [25000, 50000],
+                    communityReach: [5000, 8000],
+                    engagement: [500, 1000],
+                    communities: [8, 10]
+                }
+            },
+            growth: {
+                name: "Growth", 
+                price: 4999,
+                metrics: {
+                    impressions: [75000, 125000],
+                    communityReach: [15000, 25000],
+                    engagement: [2000, 3500],
+                    communities: [15, 20]
+                }
+            },
+            enterprise: {
+                name: "Enterprise",
+                price: 8999,
+                metrics: {
+                    impressions: [150000, 300000],
+                    communityReach: [40000, 75000],
+                    engagement: [5000, 10000],
+                    communities: [25, 30]
+                }
+            }
+        };
+
+        const addons = {
+            seo: { 
+                name: "SEO Optimization Package", 
+                price: 1500, 
+                type: "monthly",
+                metrics: {
+                    impressions: [4000, 6000],
+                    communityReach: [800, 1200],
+                    engagement: [150, 250],
+                    communities: [1, 1]
+                }
+            },
+            events: { 
+                name: "Industry Event Matchmaking", 
+                price: 1200, 
+                type: "monthly",
+                metrics: {
+                    impressions: [2500, 3500],
+                    communityReach: [400, 600],
+                    engagement: [120, 180],
+                    communities: [1, 1]
+                }
+            },
+            linkedin: { 
+                name: "Executive LinkedIn Profile Management", 
+                price: 800, 
+                type: "monthly",
+                metrics: {
+                    impressions: [1500, 2500],
+                    communityReach: [250, 350],
+                    engagement: [80, 120],
+                    communities: [1, 1]
+                }
+            },
+            social: { 
+                name: "Company Social Media Management", 
+                price: 1500, 
+                type: "monthly",
+                metrics: {
+                    impressions: [6000, 10000],
+                    communityReach: [1200, 1800],
+                    engagement: [300, 500],
+                    communities: [2, 2]
+                }
+            },
+            influencer: { 
+                name: "Developer Influencer Network", 
+                price: 3500, 
+                type: "monthly",
+                metrics: {
+                    impressions: [12000, 18000],
+                    communityReach: [2500, 3500],
+                    engagement: [600, 1000],
+                    communities: [3, 3]
+                }
+            },
+            hackathon: { 
+                name: "Hackathon Sponsorship Strategy", 
+                price: 3000, 
+                type: "quarterly",
+                metrics: {
+                    impressions: [8000, 12000],
+                    communityReach: [1600, 2400],
+                    engagement: [400, 600],
+                    communities: [2, 2]
+                }
+            }
+        };
+
+        // Current selections
+        let selectedPackage = null; // Changed to single package
+        let selectedAddons = [];
+
+        // Header behavior - sticky on desktop, non-sticky on mobile
+        let lastScrollY = 0;
+        let ticking = false;
+
+        function updateHeaderOnScroll() {
+            const header = document.getElementById('main-header');
+            const currentScrollY = window.scrollY;
+            
+            // Desktop: sticky behavior, Mobile: non-sticky (per requirements)
+            if (window.innerWidth >= 768) {
+                // Desktop - always sticky and visible
+                header.classList.remove('hidden');
+                header.classList.add('visible');
+            } else {
+                // Mobile - non-sticky, always visible (no hide/show)
+                header.classList.remove('hidden');
+                header.classList.add('visible');
+            }
+            
+            lastScrollY = currentScrollY;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateHeaderOnScroll);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            requestTick();
+            ticking = false;
+        });
+
+        // Handle resize to ensure proper header behavior
+        window.addEventListener('resize', function() {
+            updateHeaderOnScroll();
+        });
+
+        // Format number with commas
+        function formatNumber(num) {
+            return num.toLocaleString();
+        }
+
+        // Format number range
+        function formatRange(min, max) {
+            return `${formatNumber(min)}-${formatNumber(max)}`;
+        }
+
+        // Calculate total metrics and investment
+        function calculateTotalMetrics() {
+            let totalMetrics = {
+                impressions: [0, 0],
+                communityReach: [0, 0],
+                engagement: [0, 0],
+                communities: [0, 0],
+                investment: 0
+            };
+
+            // Add package metrics
+            if (selectedPackage) {
+                const packageData = packages[selectedPackage];
+                totalMetrics.impressions[0] += packageData.metrics.impressions[0];
+                totalMetrics.impressions[1] += packageData.metrics.impressions[1];
+                totalMetrics.communityReach[0] += packageData.metrics.communityReach[0];
+                totalMetrics.communityReach[1] += packageData.metrics.communityReach[1];
+                totalMetrics.engagement[0] += packageData.metrics.engagement[0];
+                totalMetrics.engagement[1] += packageData.metrics.engagement[1];
+                totalMetrics.communities[0] += packageData.metrics.communities[0];
+                totalMetrics.communities[1] += packageData.metrics.communities[1];
+                totalMetrics.investment += packageData.price;
+            }
+
+            // Add addon metrics
+            selectedAddons.forEach(addonKey => {
+                const addonData = addons[addonKey];
+                totalMetrics.impressions[0] += addonData.metrics.impressions[0];
+                totalMetrics.impressions[1] += addonData.metrics.impressions[1];
+                totalMetrics.communityReach[0] += addonData.metrics.communityReach[0];
+                totalMetrics.communityReach[1] += addonData.metrics.communityReach[1];
+                totalMetrics.engagement[0] += addonData.metrics.engagement[0];
+                totalMetrics.engagement[1] += addonData.metrics.engagement[1];
+                totalMetrics.communities[0] += addonData.metrics.communities[0];
+                totalMetrics.communities[1] += addonData.metrics.communities[1];
+                totalMetrics.investment += addonData.price;
+            });
+
+            return totalMetrics;
+        }
+
+        // Update metrics display
+        function updateMetrics() {
+            const metrics = calculateTotalMetrics();
+            
+            // Desktop elements
+            const investmentEl = document.getElementById('total-investment');
+            const impressionsEl = document.getElementById('total-impressions');
+            const communityEl = document.getElementById('total-community');
+            const engagementEl = document.getElementById('total-engagement');
+            
+            // Mobile element
+            const mobileEl = document.getElementById('mobile-total');
+            
+            // CTA elements
+            const ctaInvestmentEl = document.getElementById('cta-investment');
+            const ctaReachEl = document.getElementById('cta-reach');
+            
+            // Mobile CTA metrics elements
+            const ctaMobileInvestmentEl = document.getElementById('cta-mobile-investment');
+            const ctaMobileImpressionsEl = document.getElementById('cta-mobile-impressions');
+            const ctaMobileCommunityEl = document.getElementById('cta-mobile-community');
+            const ctaMobileEngagementEl = document.getElementById('cta-mobile-engagement');
+
+            if (!selectedPackage && selectedAddons.length === 0) {
+                if (investmentEl) investmentEl.textContent = '$0/month';
+                if (impressionsEl) impressionsEl.textContent = '0';
+                if (communityEl) communityEl.textContent = '0 developers';
+                if (engagementEl) engagementEl.textContent = '0 interactions';
+                if (mobileEl) mobileEl.textContent = 'Select Package';
+                if (ctaInvestmentEl) ctaInvestmentEl.textContent = 'Select a package';
+                if (ctaReachEl) ctaReachEl.textContent = 'Select a package';
+                
+                // Mobile CTA metrics - empty state
+                if (ctaMobileInvestmentEl) ctaMobileInvestmentEl.textContent = '$0/mo';
+                if (ctaMobileImpressionsEl) ctaMobileImpressionsEl.textContent = '0';
+                if (ctaMobileCommunityEl) ctaMobileCommunityEl.textContent = '0 devs';
+                if (ctaMobileEngagementEl) ctaMobileEngagementEl.textContent = '0';
+            } else {
+                // Add smooth animation
+                [investmentEl, impressionsEl, communityEl, engagementEl, 
+                 ctaMobileInvestmentEl, ctaMobileImpressionsEl, ctaMobileCommunityEl, ctaMobileEngagementEl].forEach(el => {
+                    if (el) el.style.transition = 'all 0.3s ease';
+                });
+                
+                if (investmentEl) investmentEl.textContent = `$${formatNumber(metrics.investment)}/month`;
+                if (impressionsEl) impressionsEl.textContent = formatRange(metrics.impressions[0], metrics.impressions[1]);
+                if (communityEl) communityEl.textContent = `${formatRange(metrics.communityReach[0], metrics.communityReach[1])} developers`;
+                if (engagementEl) engagementEl.textContent = `${formatRange(metrics.engagement[0], metrics.engagement[1])} interactions`;
+                
+                // Mobile header
+                if (mobileEl) mobileEl.textContent = `$${formatNumber(metrics.investment)}/mo`;
+                
+                // CTA section
+                if (ctaInvestmentEl) ctaInvestmentEl.textContent = `$${formatNumber(metrics.investment)}/month`;
+                if (ctaReachEl) ctaReachEl.textContent = `${formatRange(metrics.communityReach[0], metrics.communityReach[1])} developers`;
+                
+                // Mobile CTA metrics - populated state
+                if (ctaMobileInvestmentEl) ctaMobileInvestmentEl.textContent = `$${formatNumber(metrics.investment)}/mo`;
+                if (ctaMobileImpressionsEl) ctaMobileImpressionsEl.textContent = formatRange(metrics.impressions[0], metrics.impressions[1]);
+                if (ctaMobileCommunityEl) ctaMobileCommunityEl.textContent = `${formatRange(metrics.communityReach[0], metrics.communityReach[1])} devs`;
+                if (ctaMobileEngagementEl) ctaMobileEngagementEl.textContent = `${formatRange(metrics.engagement[0], metrics.engagement[1])}`;
+            }
+        }
+
+        // Handle package selection (radio behavior)
+        function handlePackageChange(packageKey) {
+            // Clear previous selection
+            if (selectedPackage) {
+                const prevCard = document.querySelector(`[data-package="${selectedPackage}"]`);
+                if (prevCard) prevCard.classList.remove('selected');
+            }
+            
+            selectedPackage = packageKey;
+            const card = document.querySelector(`[data-package="${packageKey}"]`);
+            card.classList.add('selected');
+            
+            // Enable add-ons and CTA buttons now that package is selected
+            enableAddonsAndCTA();
+            
+            updateMetrics();
+        }
+
+        // Select package (for card click)
+        function selectPackage(packageKey) {
+            const radio = document.getElementById(`${packageKey}-radio`);
+            radio.checked = true;
+            handlePackageChange(packageKey);
+        }
+
+        // Handle addon selection
+        function handleAddonChange(addonKey) {
+            if (!selectedPackage) {
+                return false; // Prevent change if no package selected
+            }
+            
+            const checkbox = document.getElementById(`${addonKey}-checkbox`);
+            
+            if (checkbox.checked) {
+                if (!selectedAddons.includes(addonKey)) {
+                    selectedAddons.push(addonKey);
+                }
+            } else {
+                selectedAddons = selectedAddons.filter(a => a !== addonKey);
+            }
+            
+            // Update metrics when add-ons change
+            updateMetrics();
+        }
+
+        // Enable add-ons and CTA buttons after package selection
+        function enableAddonsAndCTA() {
+            // Enable all addon checkboxes and table rows (desktop)
+            const checkboxes = document.querySelectorAll('.addon-checkbox');
+            const tableRows = document.querySelectorAll('.addons-table tr.disabled');
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.disabled = false;
+            });
+            
+            tableRows.forEach(row => {
+                row.classList.remove('disabled');
+            });
+            
+            // Enable mobile addon cards and checkboxes
+            const mobileCards = document.querySelectorAll('.mobile-addon-card');
+            const mobileCheckboxes = document.querySelectorAll('.mobile-addon-checkbox');
+            
+            mobileCards.forEach(card => {
+                card.classList.remove('disabled');
+                // Reset card styling
+                card.style.borderColor = 'var(--color-card-border)';
+                card.style.backgroundColor = 'var(--color-surface)';
+                card.style.cursor = 'pointer';
+            });
+            
+            mobileCheckboxes.forEach(checkbox => {
+                checkbox.disabled = false;
+            });
+            
+            // Enable CTA buttons
+            const downloadBtn = document.getElementById('download-btn');
+            const scheduleBtn = document.getElementById('schedule-btn');
+            
+            downloadBtn.classList.remove('disabled');
+            scheduleBtn.classList.remove('disabled');
+            
+            // Hide validation messages
+            const addonMessage = document.getElementById('addon-validation-message');
+            const ctaMessage = document.getElementById('cta-validation-message');
+            
+            if (addonMessage) addonMessage.style.display = 'none';
+            if (ctaMessage) ctaMessage.classList.remove('show');
+        }
+        
+        // Disable add-ons and CTA buttons when no package selected
+        function disableAddonsAndCTA() {
+            // Disable all addon checkboxes and table rows (desktop)
+            const checkboxes = document.querySelectorAll('.addon-checkbox');
+            const tableRows = document.querySelectorAll('.addons-table tbody tr');
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.disabled = true;
+                checkbox.checked = false;
+            });
+            
+            tableRows.forEach(row => {
+                row.classList.add('disabled');
+            });
+            
+            // Disable mobile addon cards and checkboxes
+            const mobileCards = document.querySelectorAll('.mobile-addon-card');
+            const mobileCheckboxes = document.querySelectorAll('.mobile-addon-checkbox');
+            
+            mobileCards.forEach(card => {
+                card.classList.add('disabled');
+                // Reset card styling to disabled state
+                card.style.borderColor = 'var(--color-card-border)';
+                card.style.backgroundColor = 'var(--color-bg-2)';
+                card.style.cursor = 'not-allowed';
+            });
+            
+            mobileCheckboxes.forEach(checkbox => {
+                checkbox.disabled = true;
+                checkbox.checked = false;
+            });
+            
+            // Disable CTA buttons
+            const downloadBtn = document.getElementById('download-btn');
+            const scheduleBtn = document.getElementById('schedule-btn');
+            
+            downloadBtn.classList.add('disabled');
+            scheduleBtn.classList.add('disabled');
+            
+            // Show validation messages
+            const addonMessage = document.getElementById('addon-validation-message');
+            const ctaMessage = document.getElementById('cta-validation-message');
+            
+            if (addonMessage) addonMessage.style.display = 'block';
+            if (ctaMessage) ctaMessage.classList.add('show');
+        }
+        
+        // Handle CTA button clicks
+        function handleCTAClick(action) {
+            if (!selectedPackage) {
+                const ctaMessage = document.getElementById('cta-validation-message');
+                if (ctaMessage) {
+                    ctaMessage.classList.add('show');
+                    setTimeout(() => ctaMessage.classList.remove('show'), 3000);
+                }
+                return false;
+            }
+            
+            // If package is selected, proceed with action
+            if (action === 'download') {
+                window.open('https://drive.google.com/file/d/1_1_TJsK1YfIGCx07GPkBYqCRoPXD9Yfl/view?usp=sharing', '_blank');
+            } else if (action === 'schedule') {
+                window.open('https://calendar.neoticai.com/book', '_blank');
+            }
+        }
+
+        // Handle mobile addon changes
+        function handleMobileAddonChange(addonKey) {
+            if (!selectedPackage) {
+                return false;
+            }
+            
+            const mobileCheckbox = document.getElementById(`mobile-${addonKey}-checkbox`);
+            const desktopCheckbox = document.getElementById(`${addonKey}-checkbox`);
+            
+            // Sync between mobile and desktop checkboxes
+            if (desktopCheckbox) {
+                desktopCheckbox.checked = mobileCheckbox.checked;
+            }
+            
+            // Use the existing handleAddonChange function
+            handleAddonChange(addonKey);
+            
+            // Visual feedback for mobile interaction
+            const card = document.getElementById(`mobile-${addonKey}-card`);
+            if (card) {
+                if (mobileCheckbox.checked) {
+                    card.style.borderColor = 'var(--color-primary)';
+                    card.style.backgroundColor = 'rgba(var(--color-royal-blue-500-rgb), 0.05)';
+                } else {
+                    card.style.borderColor = 'var(--color-card-border)';
+                    card.style.backgroundColor = 'var(--color-surface)';
+                }
+            }
+        }
+        
+        // Toggle mobile addon via card click
+        function toggleMobileAddon(addonKey) {
+            if (!selectedPackage) {
+                // Show validation if no package selected
+                const addonMessage = document.getElementById('addon-validation-message');
+                if (addonMessage) {
+                    addonMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Flash the validation message
+                    addonMessage.style.animation = 'none';
+                    setTimeout(() => {
+                        addonMessage.style.animation = 'fadeIn var(--duration-normal) var(--ease-standard)';
+                    }, 10);
+                }
+                return false;
+            }
+            
+            const mobileCheckbox = document.getElementById(`mobile-${addonKey}-checkbox`);
+            if (mobileCheckbox && !mobileCheckbox.disabled) {
+                mobileCheckbox.checked = !mobileCheckbox.checked;
+                handleMobileAddonChange(addonKey);
+                
+                // Visual feedback for the card
+                const card = document.getElementById(`mobile-${addonKey}-card`);
+                if (card) {
+                    card.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        card.style.transform = 'scale(1)';
+                    }, 100);
+                }
+            }
+        }
+
+        // Clear all selections
+        function clearAllSelections() {
+            // Clear package selection
+            if (selectedPackage) {
+                const radio = document.getElementById(`${selectedPackage}-radio`);
+                const card = document.querySelector(`[data-package="${selectedPackage}"]`);
+                if (radio) radio.checked = false;
+                if (card) card.classList.remove('selected');
+            }
+            selectedPackage = null;
+
+            // Clear addon selections (both desktop and mobile)
+            selectedAddons.forEach(addonKey => {
+                const desktopCheckbox = document.getElementById(`${addonKey}-checkbox`);
+                const mobileCheckbox = document.getElementById(`mobile-${addonKey}-checkbox`);
+                if (desktopCheckbox) desktopCheckbox.checked = false;
+                if (mobileCheckbox) mobileCheckbox.checked = false;
+            });
+            selectedAddons = [];
+            
+            // Disable add-ons and CTA buttons
+            disableAddonsAndCTA();
+
+            // Update metrics
+            updateMetrics();
+        }
+
+        // Prevent card click when clicking radio button
+        document.addEventListener('DOMContentLoaded', function() {
+            const radios = document.querySelectorAll('.package-radio');
+            radios.forEach(radio => {
+                radio.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+
+            // Initialize header scroll behavior
+            updateHeaderOnScroll();
+            
+            // Initialize disabled state for add-ons and CTA buttons
+            disableAddonsAndCTA();
+            
+            // Initial metrics update
+            updateMetrics();
+            
+            // Enhanced mobile addon visibility check
+            function ensureMobileAddonsVisibility() {
+                const viewport = window.innerWidth;
+                const mobileCards = document.querySelector('.mobile-addons-cards');
+                const table = document.querySelector('.addons-table');
+                
+                if (viewport <= 767) {
+                    // Force mobile layout
+                    if (mobileCards) {
+                        mobileCards.style.display = 'flex';
+                        mobileCards.style.visibility = 'visible';
+                        mobileCards.style.opacity = '1';
+                    }
+                    if (table) {
+                        table.style.display = 'none';
+                    }
+                } else {
+                    // Force desktop layout
+                    if (mobileCards) {
+                        mobileCards.style.display = 'none';
+                    }
+                    if (table) {
+                        table.style.display = 'table';
+                    }
+                }
+            }
+            
+            ensureMobileAddonsVisibility();
+            window.addEventListener('resize', ensureMobileAddonsVisibility);
+        });
+    </script>
+</body>
+</html>
