@@ -19,7 +19,15 @@ Interactive marketing proposal for Iterate.ai's developer community engagement c
 - ✅ Royal blue professional branding
 - ✅ Touch-friendly mobile interface
 
-## 🔧 Deployment
+## 🔧 Setup
+Run the setup script to clone required dependencies:
+```bash
+./setup.sh
+```
+
+This will clone the Cal.com repository for reference and development purposes.
+
+## 🚀 Deployment
 1. Fork or clone this repository
 2. Enable GitHub Pages in repository Settings → Pages
 3. Select "Deploy from a branch" → main → / (root)
